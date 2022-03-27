@@ -1,0 +1,22 @@
+syntax="proto3";
+
+package proto;
+
+option go_package = "./service";
+
+
+// TestService 测试服务
+service TestService {
+    // Test 测试方法
+    rpc Test(Request) returns (Response) {};
+}
+
+// Request 请求结构
+message Request {
+    string name = 1;
+}
+
+// Response 响应结构
+message Response {
+    string message = 1;
+}

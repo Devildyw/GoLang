@@ -1,0 +1,18 @@
+syntax="proto3";
+package proto;
+
+option go_package = "./SearchRequest";
+
+message SearchRequest{
+    string query = 1;
+    int32 page_number = 2;
+    int32 result_per_page = 3;
+
+    message Search{
+        string id = 1;
+    }
+    
+    repeated Search search = 4;
+
+}
+
