@@ -1,0 +1,30 @@
+syntax="proto3";
+
+package Demo03;
+
+option go_package = "./service";
+
+service RouteGuide{
+    rpc GetFeature(Point) returns (Feature) {}
+    rpc ListFeatures(Rectangle) returns (stream Feature) {}
+    rpc RecordRoute(stream Point) returns (RouteSummary) {}
+    rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
+}
+message Point {
+    int32 latitude = 1;
+    int32 longitude = 2;
+}
+message Rectangle{
+    int32 chang = 1;
+    int32 kuan = 2;
+}
+message RouteNote{
+    int32 note = 1;
+}
+message Feature{
+    string feature = 1;
+}
+message RouteSummary{
+    string route_summary = 1;
+}
+
